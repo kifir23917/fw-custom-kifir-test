@@ -52,7 +52,6 @@ jobs:
         shell: bash
         run: |
           : Log custom-board-build step outputs
-          echo "kifir_test=${{ steps.custom-board-build.outputs.kifir_test }}"
-          echo "new_tag=${{ steps.custom-board-build.new_tag }}"
-          echo "white_label=${{ steps.custom-board-build.outputs.white_label }}"
-          echo "short_board_name=${{ steps.custom-board-build.outputs.short_board_name }}"
+          echo "new_tag=${{ env.custom_board_build_output_new_tagl }}"
+          echo "white_label=${{ env.custom_board_build_output_white_label }}"
+          echo "short_board_name=${{ custom_board_build_output_short_board_name }}"
