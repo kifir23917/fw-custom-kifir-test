@@ -32,7 +32,7 @@ jobs:
           fi
 
       - uses: ./ext/rusefi/.github/workflows/custom-board-build
-        id: custom-board-build
+        id: kifirAction
         with:
           new_tag: ${{steps.set-variables.outputs.release_date}}
           artifacts: bin srec hex list map elf bundle autoupdate
@@ -52,6 +52,10 @@ jobs:
         shell: bash
         run: |
           : Log custom-board-build step outputs
-          echo "new_tag=${custom_board_build_output_new_tag}"
-          echo "white_label=${custom_board_build_output_white_label}"
-          echo "short_board_name=${custom_board_build_output_short_board_name}"
+          echo "custom_board_build_output_new_tag=${custom_board_build_output_new_tag}"
+          echo "custom_board_build_output_white_label=${custom_board_build_output_white_label}"
+          echo "custom_board_build_output_short_board_name=${custom_board_build_output_short_board_name}"
+
+          echo "new_tag=${steps.kifirAction.outputs.new_tag}"
+          echo "white_label=${steps.kifirAction.outputs.white_label}"
+          echo "short_board_name=${steps.kifirAction.outputs.short_board_name}"
