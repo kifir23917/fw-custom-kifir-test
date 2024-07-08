@@ -56,6 +56,10 @@ jobs:
           echo "custom_board_build_output_white_label=${custom_board_build_output_white_label}"
           echo "custom_board_build_output_short_board_name=${custom_board_build_output_short_board_name}"
 
-          echo "new_tag=${steps.kifirAction.outputs.new_tag}"
-          echo "white_label=${steps.kifirAction.outputs.white_label}"
-          echo "short_board_name=${steps.kifirAction.outputs.short_board_name}"
+          echo "new_tag=${{ steps.kifirAction.outputs.new_tag }}"
+          echo "white_label=${{ steps.kifirAction.outputs.white_label }}"
+          echo "short_board_name=${{ steps.kifirAction.outputs.short_board_name }}"
+
+          echo "new_tag=${{ steps.kifirAction.env.custom_board_build_output_new_tag }}"
+          echo "white_label=${{ steps.kifirAction.env.custom_board_build_output_white_label }}"
+          echo "short_board_name=${{ steps.kifirAction.env.custom_board_build_output_short_board_name }}"
